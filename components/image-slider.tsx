@@ -4,10 +4,10 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 const images = [
-  { src: '/placeholder.svg?height=1080&width=1920&text=Plant1', alt: 'Plant 1' },
-  { src: '/placeholder.svg?height=1080&width=1920&text=Plant2', alt: 'Plant 2' },
-  { src: '/placeholder.svg?height=1080&width=1920&text=Plant3', alt: 'Plant 3' },
-  { src: '/placeholder.svg?height=1080&width=1920&text=Plant4', alt: 'Plant 4' },
+  { src: '/p1.png', alt: 'Plant 1' },
+  { src: '/p2.png', alt: 'Plant 2' },
+  { src: '/p3.png', alt: 'Plant 3' },
+  { src: '/p4.png', alt: 'Plant 4' },
 ]
 
 export function ImageSlider() {

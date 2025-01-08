@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Plant } from "../types"
+import { Plant } from "app/types"
 import { Droplet, Calendar } from 'lucide-react'
 
 export default function PlantList() {
