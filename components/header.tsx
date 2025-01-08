@@ -25,10 +25,11 @@ export function Header() {
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center space-x-2">
             <Image
-              src="/Untitled design (1).png"
+              src="/icon.png"
               alt="SproutBotanica Logo"
-              width={50}
-              height={50}
+              width={30}
+              height={30}
+              
               className="object-contain"
             />
             <span className="text-2xl font-bold">SproutBotanica</span>
