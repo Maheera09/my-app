@@ -1,101 +1,74 @@
-import Image from "next/image";
+import { Header } from "@/components/header"
+import { ImageSlider } from "@/components/image-slider"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Leaf, AlertTriangle, ShoppingBag, BarChart2, MessageSquare } from 'lucide-react'
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-grow flex flex-col">
+        <ImageSlider />
+        <section className="bg-white py-16 px-4 text-center">
+          <div className="container mx-auto">
+            <h1 className="text-4xl font-bold text-green-700 mb-4">SproutBotanica</h1>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+              Your personal plant care companion. Identify plants, detect diseases, track growth, and chat with our AI bot for expert advice.
+            </p>
+            <hr className="w-32 mx-auto border-t-2 border-green-500 mb-8" />
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+              SproutBotanica combines cutting-edge technology with a passion for plants. Whether you're a seasoned gardener or just starting your green journey, our app provides the tools and knowledge you need to help your plants thrive.
+            </p>
+          </div>
+        </section>
+        <section className="bg-gray-100 py-16 px-4">
+          <div className="container mx-auto">
+            <h2 className="text-3xl font-bold text-green-700 mb-12 text-center">Our Features</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                { icon: Leaf, title: "Plant Identification", description: "Instantly identify any plant species by simply taking a photo. Our AI-powered system provides accurate results within seconds.", color: "text-green-600" },
+                { icon: AlertTriangle, title: "Disease Detection", description: "Detect plant diseases early. Upload a photo of your plant, and our system will diagnose potential issues and suggest treatments.", color: "text-yellow-600" },
+                { icon: ShoppingBag, title: "E-commerce", description: "Shop for plants, tools, and accessories directly through our app. We partner with trusted suppliers to bring you quality products.", color: "text-blue-600" },
+                { icon: BarChart2, title: "Growth Tracking", description: "Monitor your plants' growth over time. Set care reminders, log watering and fertilizing, and watch your garden flourish.", color: "text-purple-600" },
+                { icon: MessageSquare, title: "Chat with BOT", description: "Get instant answers to your plant care questions. Our AI chatbot provides expert advice 24/7, helping you become a better gardener.", color: "text-indigo-600" },
+              ].map((feature, index) => (
+                <Card key={index} className="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                  <CardHeader className="bg-gradient-to-br from-green-50 to-green-100">
+                    <feature.icon className={`w-12 h-12 ${feature.color} mb-2`} />
+                    <CardTitle className="text-xl font-semibold">{feature.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-6">
+                    <p className="text-gray-600">{feature.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+        <div className="bg-white bg-[url('/placeholder.svg?height=200&width=200')] bg-opacity-10 border-2 border-green-600 rounded-xl p-10 max-w-4xl mx-auto shadow-xl transform hover:scale-105 transition-all duration-300 mt-16">
+          <div className="bg-gradient-to-r from-green-400 to-green-600 text-white py-3 px-6 rounded-lg -mt-14 mb-6 shadow-lg inline-block">
+            <h3 className="text-xl font-bold">Start Your Green Journey</h3>
+          </div>
+          <p className="text-lg text-gray-700 mb-6 text-center max-w-2xl mx-auto">
+            Unlock all features and nurture your plants like never before! Join our community of plant enthusiasts today.
+          </p>
+          <div className="flex justify-center space-x-6">
+            <Button className="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-full transition-colors duration-300 text-base shadow-md hover:shadow-lg">
+              Sign Up
+            </Button>
+            <Button variant="outline" className="border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white font-semibold py-3 px-6 rounded-full transition-colors duration-300 text-base shadow-md hover:shadow-lg">
+              Login
+            </Button>
+          </div>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      <footer className="bg-green-600 text-white py-4 mt-16">
+        <div className="container mx-auto text-center">
+          <p>&copy; 2023 SproutBotanica. All rights reserved.</p>
+        </div>
       </footer>
     </div>
-  );
+  )
 }
+
