@@ -5,6 +5,7 @@ import { PlantCard } from "@/components/plant-card"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Plus } from 'lucide-react'
+import Link from 'next/link'
 
 // Sample plant data (in a real app, this would come from a database or API)
 const plants = [
@@ -32,10 +33,12 @@ export default function TrackPage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <Button className="bg-green-600 hover:bg-green-700 text-white">
-              <Plus className="mr-2 h-4 w-4" />
-              Add new plant
-            </Button>
+            <Link href="/track/add">
+              <Button className="bg-green-600 hover:bg-green-700 text-white">
+                <Plus className="mr-2 h-4 w-4" />
+                Add new plant
+              </Button>
+            </Link>
           </motion.div>
         </div>
         <motion.div 
