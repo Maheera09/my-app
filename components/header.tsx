@@ -16,31 +16,31 @@ export function Header() {
     { href: "/diseases", icon: AlertTriangle, label: "Diseases" },
     { href: "/shop", icon: ShoppingBag, label: "Shop" },
     { href: "/track", icon: BarChart2, label: "Track" },
-    { href: "/chat", icon: MessageSquare, label: "Chat" },
+    { href: "/chat", icon: MessageSquare, label: "Chat" }
   ]
 
   return (
     <header className="bg-green-600 text-white">
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex justify-between items-center">
-          <Link href="/" className="flex items-center space-x-2">
-            <Image
-              src="/icon.png"
-              alt="SproutBotanica Logo"
-              width={30}
-              height={30}
-              
-              className="object-contain"
-            />
+      <div className="container mx-auto px-4 max-w-7xl">
+        <div className="flex justify-between items-stretch">
+          <Link href="/" className="flex items-center space-x-2 py-3">
+            <div className="relative h-full aspect-square">
+              <Image 
+                src="/icon.png" 
+                alt=""
+                fill
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
             <span className="text-2xl font-bold">SproutBotanica</span>
           </Link>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex justify-center flex-grow">
-            <div className="flex space-x-4">
+          <nav className="hidden md:flex justify-center items-center w-[500px]">
+            <div className="flex space-x-2">
               {navItems.map((item) => (
                 <Link key={item.href} href={item.href}>
-                  <Button variant="ghost" className="text-white hover:text-green-200 hover:bg-green-700 transition-colors duration-200">
+                  <Button variant="ghost" className="text-white hover:text-green-200 hover:bg-green-700 transition-colors duration-200 px-2">
                     <item.icon className="mr-2 h-4 w-4" />
                     {item.label}
                   </Button>
@@ -50,9 +50,9 @@ export function Header() {
           </nav>
           
           {/* Mobile Navigation */}
-          <Sheet>
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" className="md:hidden text-white">
+              <Button variant="ghost" className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
@@ -71,7 +71,7 @@ export function Header() {
           </Sheet>
 
           {/* Login and Sign Up Buttons */}
-          <div className="hidden md:flex space-x-2">
+          <div className="hidden md:flex items-center space-x-2 min-w-[200px] justify-end">
             <Link href="/login">
               <Button variant="outline" className="text-green-800 border-white hover:bg-green-700 hover:text-white rounded-full px-6 py-2 transition-all duration-200 shadow-md hover:shadow-lg">
                 Login
