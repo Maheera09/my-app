@@ -8,12 +8,12 @@ import { Button } from "@/components/ui/button"
 import { ShoppingBag } from 'lucide-react'
 
 const products = [
-  { id: 1, name: "Monstera Deliciosa", price: 29.99, image: "/placeholder.svg?height=200&width=200&text=Monstera" },
-  { id: 2, name: "Snake Plant", price: 19.99, image: "/placeholder.svg?height=200&width=200&text=Snake+Plant" },
-  { id: 3, name: "Fiddle Leaf Fig", price: 39.99, image: "/placeholder.svg?height=200&width=200&text=Fiddle+Leaf+Fig" },
-  { id: 4, name: "Pothos", price: 14.99, image: "/placeholder.svg?height=200&width=200&text=Pothos" },
-  { id: 5, name: "ZZ Plant", price: 24.99, image: "/placeholder.svg?height=200&width=200&text=ZZ+Plant" },
-  { id: 6, name: "Peace Lily", price: 22.99, image: "/placeholder.svg?height=200&width=200&text=Peace+Lily" },
+  { id: 1, name: "Monstera Deliciosa", price: 29.99, image: "/monstera.png" },
+  { id: 2, name: "Snake Plant", price: 19.99, image: "/snakeplant.jpg" },
+  { id: 3, name: "Fiddle Leaf Fig", price: 39.99, image: "/fiddle.jpg" },
+  { id: 4, name: "Pothos", price: 14.99, image: "/monstera.png" },
+  { id: 5, name: "ZZ Plant", price: 24.99, image: "/snakeplant.jpg" },
+  { id: 6, name: "Peace Lily", price: 22.99, image: "/fiddle.jpg" },
 ]
 
 export default function ShopPage() {

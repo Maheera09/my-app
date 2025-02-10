@@ -9,9 +9,9 @@ import Link from 'next/link'
 
 // Sample plant data (in a real app, this would come from a database or API)
 const plants = [
-  { id: 1, name: "Monstera Deliciosa", imageUrl: "/placeholder.svg?height=200&width=200&text=Monstera" },
-  { id: 2, name: "Snake Plant", imageUrl: "/placeholder.svg?height=200&width=200&text=Snake+Plant" },
-  { id: 3, name: "Fiddle Leaf Fig", imageUrl: "/placeholder.svg?height=200&width=200&text=Fiddle+Leaf+Fig" },
+  { id: 1, name: "Monstera Deliciosa", imageUrl: "/monstera.png" },
+  { id: 2, name: "Snake Plant", imageUrl: "/snakeplant.jpg" },
+  { id: 3, name: "Fiddle Leaf Fig", imageUrl: "/fiddle.jpg" },
 ]
 
 export default function TrackPage() {

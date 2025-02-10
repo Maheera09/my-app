@@ -47,7 +47,7 @@ export function ShoppingCart({ cart, setCart, isOpen, setIsOpen }: ShoppingCartP
 
   const handleCheckout = (e: React.FormEvent) => {
     e.preventDefault()
-    // Here you would typically handle the checkout process
+    // checkout process
     console.log('Checkout submitted')
     setIsCheckingOut(false)
     setIsOpen(false)

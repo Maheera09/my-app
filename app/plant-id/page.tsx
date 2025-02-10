@@ -13,7 +13,7 @@ export default function PlantIdPage() {
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
-    // Here you would typically handle the search logic
+    // logic but backend nai ha
     console.log("Searching for:", searchQuery)
   }
 
